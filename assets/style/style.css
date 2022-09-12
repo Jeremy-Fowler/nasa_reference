@@ -1,0 +1,19 @@
+/* BASIC STYLES HERE */
+body{
+  background-size: cover;
+  background-position: center top;
+}
+
+.text-shadow{
+  color: aliceblue;
+  text-shadow: 1px 1px 1px black;
+}
+input{
+  color: black;
+  text-shadow: 2px 2px aliceblue;
+  opacity: 0.7;
+}
+
+.roboto{
+  font-family: 'Roboto Slab', serif;
+}
