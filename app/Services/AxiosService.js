@@ -7,3 +7,8 @@ export const nasaApi = new axios.create({
     api_key: 'w587nM7wFTtxxIgueRbxzuByVObMKcbUUKAwh24b'
   }
 })
+// @ts-ignore
+export const sandboxApi = new axios.create({
+  baseURL: 'https://bcw-sandbox.herokuapp.com',
+  timeout: 4000,
+})

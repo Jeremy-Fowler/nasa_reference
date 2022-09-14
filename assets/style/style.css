@@ -17,3 +17,7 @@ input{
 .roboto{
   font-family: 'Roboto Slab', serif;
 }
+
+.title{
+  transform: translateY(-2em);
+}

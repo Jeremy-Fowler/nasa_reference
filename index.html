@@ -21,12 +21,26 @@
 <body>
   <header>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 d-flex justify-content-end p-3">
-          <input onchange="app.dateController.changeDate()" type="date" id="date-picker" name="date" value="2018-07-22"
-            min="1995-06-16" max="2018-12-31">
-          <a id="img-url" href="" class="ms-3" title="Open Image in New Tab" target="_blank">
-            <i class="mdi mdi-camera fs-4 text-shadow"></i></a>
+      <div class="row justify-content-between">
+        <div class="col-6 p-3 d-flex">
+          <div>
+            <i class="mdi mdi-book fs-4 text-shadow selectable" title="Open Album Offcanvas" data-bs-toggle="offcanvas"
+              data-bs-target="#album-offcanvas"></i>
+          </div>
+          <div>
+            <i id="like-icon" class="mdi ms-3 mdi-heart fs-4 text-shadow selectable" title="Save This Image"
+              onclick="app.sandboxController.savePicture()"></i>
+          </div>
+        </div>
+        <div class="col-6 d-flex justify-content-end align-items-center p-3">
+          <div>
+            <input onchange="app.nasaController.changeDate()" type="date" id="date-picker" name="date"
+              value="2018-07-22" min="1995-06-16" max="2018-12-31">
+          </div>
+          <div>
+            <a id="img-url" href="" class="ms-3" title="Open Image in New Tab" target="_blank">
+              <i class="mdi mdi-camera fs-4 text-shadow"></i></a>
+          </div>
         </div>
       </div>
     </div>
@@ -47,6 +61,25 @@
       </div>
     </div>
   </footer>
+  <!-- SECTION Off-canvas -->
+  <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="album-offcanvas"
+    aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header text-light">
+      <h5 class="offcanvas-title" id="offcanvasLabel">My pictures</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div class="row" id="pictures">
+        <!-- <div class="col-12 mb-3 picture-card">
+          <img src="https://apod.nasa.gov/apod/image/2209/GreatLacerta_Ruuth_3719.jpg" alt="" class="img-fluid rounded">
+          <div class="title  text-shadow ms-2 d-flex align-items-center justify-content-end">
+            <span class="selectable fw-bold">2022-09-14</span>
+            <i class="mdi mdi-close ms-2 selectable fs-3" title="Remove Image"></i>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
     integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -1,9 +1,9 @@
-import { DateController } from "./Controllers/DateController.js";
-import { PicturesController } from "./Controllers/PicturesController.js";
+import { NASAController } from "./Controllers/NASAController.js";
+import { SandboxController } from "./Controllers/SandboxController.js";
 
 class App {
-  picturesController = new PicturesController()
-  dateController = new DateController()
+  nasaController = new NASAController()
+  sandboxController = new SandboxController()
 }
 
 window["app"] = new App();

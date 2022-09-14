@@ -8,6 +8,8 @@ class AppState extends EventEmitter {
   values = loadState('values', Value)
   /** @type {import('./Models/Picture').Picture} */
   picture = null
+  /** @type {import('./Models/Picture').Picture[]} */
+  pictures = []
 }
 
 export const appState = new Proxy(new AppState(), {
@@ -22,3 +24,9 @@ export const appState = new Proxy(new AppState(), {
     return true
   }
 })
+
+let schema = {
+  date: 'string',
+  id: 'objectId',
+  imgUrl: ''
+}
