@@ -10,7 +10,7 @@ function _drawPicture() {
   document.getElementById('img-url').href = picture.hdUrl
   setHTML('picture-details', picture.DetailsTemplate)
   setText('copyright', picture.copyright)
-  document.getElementById('like-icon').classList.toggle('text-danger', picture.FoundPicture)
+  document.getElementById('like-icon').classList.toggle('heart', picture.FoundPicture)
 }
 
 

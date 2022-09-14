@@ -27,7 +27,7 @@ export class Picture {
       <img src="${this.imgUrl}" alt="" class="img-fluid rounded">
       <div class="title  text-shadow ms-2 d-flex align-items-center justify-content-end">
         <span class="selectable fw-bold" onclick="app.nasaController.setDate('${this.date}')" >${this.date}</span>
-        <i onclick="app.sandboxController.removePicture('${this.id}')" class="mdi mdi-close ms-2 selectable fs-3" title="Remove Image"></i>
+        <i onclick="app.sandboxController.removePicture('${this.id}')" class="mdi mdi-close ms-2 selectable fs-4" title="Remove Image"></i>
       </div>
     </div>
     `
