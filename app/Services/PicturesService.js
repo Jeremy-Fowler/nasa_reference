@@ -1,5 +1,6 @@
 import { appState } from "../AppState.js";
 import { Picture } from "../Models/Picture.js";
+import { Pop } from "../Utils/Pop.js";
 import { nasaApi, sandboxApi } from "./AxiosService.js"
 
 class PicturesService {
@@ -14,7 +15,12 @@ class PicturesService {
     appState.pictures = res.data.map(p => new Picture(p))
   }
   async savePicture() {
-    const res = await sandboxApi.post('api/jerms/apods', appState.picture)
+    let picture = appState.picture
+    if (picture.FoundPicture) {
+      Pop.toast('You have already saved this picture!', 'info')
+      return
+    }
+    const res = await sandboxApi.post('api/jerms/apods', picture)
     console.log(res.data);
     appState.pictures = [...appState.pictures, new Picture(res.data)]
   }
